@@ -1,0 +1,2 @@
+# KVAutoCancelHttpTool
+基于AFNetworking封装，能够自动取消网络请求任务的工具
