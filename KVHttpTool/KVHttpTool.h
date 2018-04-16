@@ -10,6 +10,8 @@
 #import "NSObject+KVHttp.h"
 //快速创建一个弱引用类型的对象（用于block）
 #define KV_WO(object,weakObject) __weak __typeof(&*object)weakObject = object
+//快速创建一个弱引用self
+#define KV_WS(weakSelf) KV_WO(self,weakSelf)
 #import "AFNetworking.h"
 
 typedef NS_ENUM(NSInteger, KVHttpResponseCode) {

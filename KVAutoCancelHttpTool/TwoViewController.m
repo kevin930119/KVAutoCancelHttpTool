@@ -31,7 +31,9 @@
     //添加参数
     //param = [NSMutableDictionary dictionary];
     //[param setObject:@"1" forKey:@"version"];
-    [KVHttpTool getWithUrl:@"https://www.artfire.com.cn/YihuoService/services/groupchat/getcrhomepagedata" params:param object:nil handler:^(KVHttpResponseCode code, NSInteger statusCode, NSDictionary *responseHeaderFields, id responseObject) {
+    KV_WS(weakSelf);
+    //替换为自己接口的地址
+    [KVHttpTool getWithUrl:@"http://www.baidu.com" params:param object:self handler:^(KVHttpResponseCode code, NSInteger statusCode, NSDictionary *responseHeaderFields, id responseObject) {
         if (code == KVHttpResponseCode_Success) {
             NSLog(@"成功");
         }else if (code == KVHttpResponseCode_Cancelled) {
@@ -40,7 +42,13 @@
             NSLog(@"失败");
         }
         NSLog(@"%ld %@ %@", statusCode, responseHeaderFields, NSStringFromClass([responseObject class]));
+        [weakSelf hahaha];  //必须得做好内存管理，这是做好程序的前提，不然自动取消也不好使
+//        [self hahaha];
     }];
+}
+
+- (void)hahaha {
+    NSLog(@"哈哈哈");
 }
 
 - (UIButton*)getBtnWithTitle:(NSString*)title sel:(SEL)selector frame:(CGRect)frame {

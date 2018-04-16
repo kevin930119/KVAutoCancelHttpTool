@@ -10,7 +10,7 @@
 #import "KVHttpResponseObject.h"
 
 @interface NSObject (KVHttp)
-//网络请求对象
+//释放监听对象
 @property (nonatomic, strong) KVHttpResponseObject * kvHttpObject;
 
 @end

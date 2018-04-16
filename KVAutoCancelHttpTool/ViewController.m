@@ -53,7 +53,8 @@
     //添加参数
 //    param = [NSMutableDictionary dictionary];
 //    [param setObject:@"1" forKey:@"version"]
-    _task = [KVHttpTool getWithUrl:@"https://www.artfire.com.cn/YihuoService/services/groupchat/getcrhomepagedata" params:param object:self handler:^(KVHttpResponseCode code, NSInteger statusCode, NSDictionary *responseHeaderFields, id responseObject) {
+    //替换为自己接口的地址
+    _task = [KVHttpTool getWithUrl:@"http://www.baidu.com" params:param object:self handler:^(KVHttpResponseCode code, NSInteger statusCode, NSDictionary *responseHeaderFields, id responseObject) {
         if (code == KVHttpResponseCode_Success) {
             NSLog(@"成功");
         }else if (code == KVHttpResponseCode_Cancelled) {
